@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.org.jetbrains.dokka)
+    `maven-publish`
 }
 
 android {
@@ -64,4 +65,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+
+                groupId = "com.noblesoftware.portalmaterialdesign"
+                artifactId = "com.noblesoftware.portalmaterialdesign"
+                version = "1.0.0"
+            }
+        }
+    }
 }
