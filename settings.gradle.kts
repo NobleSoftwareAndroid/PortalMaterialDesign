@@ -12,7 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "Portal Material Design Library"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+rootProject.name = "PortalMaterialDesignLibrary"
 include(":app")
 include(":PortalMaterialDesign")
