@@ -66,6 +66,18 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.noblesoftware.portalmaterialdesign"
+                artifactId = "com.noblesoftware.portalmaterialdesign"
+                version = "1.0.0"
+            }
+        }
+    }
+}
 tasks.dokkaHtml.configure {
     dokkaSourceSets {
         named("main") {
