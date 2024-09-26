@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -22,7 +23,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
  * Parameters
  * @param show A boolean value indicating whether the progress dialog should be displayed.
  *
- * @sample DefaultProgressDialog
+ * @sample ExampleProgressDialog
  * 
  * @author VPN Android Team
  * @since 2024
@@ -51,4 +52,9 @@ fun DefaultProgressDialog(
             }
         }
     }
+}
+
+@Composable
+private fun ExampleProgressDialog(showProgress: MutableState<Boolean>) {
+    DefaultProgressDialog(show = showProgress.value)
 }

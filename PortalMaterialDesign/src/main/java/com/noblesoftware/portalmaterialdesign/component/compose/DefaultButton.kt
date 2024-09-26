@@ -3,6 +3,7 @@ package com.noblesoftware.portalmaterialdesign.component.compose
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -145,5 +146,18 @@ fun ButtonSize.getButtonHeightInDp(): Dp {
         ButtonSize.Small -> LocalDimen.current.buttonSmall
         ButtonSize.Large -> LocalDimen.current.buttonLarge
         else -> LocalDimen.current.buttonMedium
+    }
+}
+
+@Composable
+private fun ExampleDefaultButton() {
+    DefaultButton(
+        modifier = Modifier.fillMaxWidth(),
+        text = "Login",
+        buttonVariant = ButtonVariant.Success,
+        buttonSize = ButtonSize.Medium,
+        buttonType = ButtonType.Solid
+    ) {
+
     }
 }

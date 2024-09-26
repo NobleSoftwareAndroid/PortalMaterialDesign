@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextAlign
@@ -237,4 +238,16 @@ value class DialogType internal constructor(@Suppress("unused") private val valu
         @Stable
         val FullScreenAlert: DialogType = DialogType(3)
     }
+}
+
+@Composable
+private fun ExampleDefaultDialog() {
+    DefaultDialog(
+        icon = painterResource(id = R.drawable.img_shield),
+        title = "title example",
+        message = "message example",
+        positiveButtonText = "oke",
+        onPositive = { /* positive callback */ },
+        onDismissRequest = {/* negative callback */ },
+    )
 }

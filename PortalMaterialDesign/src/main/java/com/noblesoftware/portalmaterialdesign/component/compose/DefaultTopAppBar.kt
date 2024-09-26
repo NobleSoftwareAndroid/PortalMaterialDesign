@@ -2,6 +2,7 @@ package com.noblesoftware.portalmaterialdesign.component.compose
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -47,7 +48,7 @@ fun DefaultTopAppBarPreview() {
  * @param navigator An optional NavHostController for handling navigation actions.
  * @param actions An optional composable lambda that defines additional action icons or buttons to display in the app bar.
  *
- * @sample DefaultTopAppBar
+ * @sample ExampleDefaultTopAppBar
  *
  * @author VPN Android Team
  * @since 2024
@@ -136,4 +137,33 @@ fun DefaultTopAppBar(
             HorizontalDivider(thickness = 1.dp, color = colorResource(id = R.color.divider))
         }
     }
+}
+
+
+@Composable
+private fun ExampleDefaultTopAppBar() {
+    DefaultTopAppBar(
+        modifier = Modifier.fillMaxWidth(),
+        title = "Sample Plain Top Bar",
+        plain = true,
+        canBack = true,
+        actions = {
+            Row {
+                IconButton(onClick = { }) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_help),
+                        contentDescription = "Help",
+                        tint = colorResource(id = R.color.text_secondary)
+                    )
+                }
+                IconButton(onClick = { }) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_profile),
+                        contentDescription = "User",
+                        tint = colorResource(id = R.color.text_secondary)
+                    )
+                }
+            }
+        }
+    )
 }
