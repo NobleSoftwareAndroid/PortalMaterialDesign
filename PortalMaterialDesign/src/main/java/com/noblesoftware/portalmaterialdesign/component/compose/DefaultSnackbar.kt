@@ -42,7 +42,7 @@ import com.noblesoftware.portalmaterialdesign.util.extension.orResourceStringEmp
  * @param data A SnackbarData ([SnackbarData]) object containing information about the snackbar content (e.g., title, message, action).
  * @param state A SnackbarState ([SnackbarState]) object that manages the snackbar’s visibility and behavior.
  *
- * @sample
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleSnackbar
  *
  * @author VPN Android Team
  * @since 2024

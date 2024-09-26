@@ -23,7 +23,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
  * Parameters
  * @param show A boolean value indicating whether the progress dialog should be displayed.
  *
- * @sample ExampleProgressDialog
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleProgressDialog
  * 
  * @author VPN Android Team
  * @since 2024

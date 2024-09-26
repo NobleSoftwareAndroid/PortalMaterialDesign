@@ -46,7 +46,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
  * @param shape An optional shape (e.g., rounded corners) for the button. Defaults to null (no specific shape).
  * @param onClick A lambda function to execute when the button is clicked.
  *
- * @sample ExampleDefaultButton
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultButton
  *
  * @author VPN Android Team
  * @since 2024

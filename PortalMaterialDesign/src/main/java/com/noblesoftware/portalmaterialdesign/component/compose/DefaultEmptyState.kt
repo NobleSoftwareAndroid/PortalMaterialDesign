@@ -30,7 +30,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
  * @param message The detailed message or description for the empty state.
  * @param icon An optional Painter representing an icon to display alongside the title and message.
  *
- * @sample ExampleEmptyState
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleEmptyState
  *
  * @author VPN Android Team
  * @since 2024

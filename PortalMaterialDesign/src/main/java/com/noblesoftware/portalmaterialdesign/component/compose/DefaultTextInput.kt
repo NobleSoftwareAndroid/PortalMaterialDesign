@@ -98,7 +98,7 @@ fun GreetingPreview() {
  * @param onValueChange A lambda function to handle changes in the input value.
  * @param onFocusChange A lambda function to handle focus changes (e.g., when the input gains or loses focus).
  *
- * @sample ExampleDefaultTextInput
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultTextInput
  *
  * @author VPN Android Team
  * @since 2024

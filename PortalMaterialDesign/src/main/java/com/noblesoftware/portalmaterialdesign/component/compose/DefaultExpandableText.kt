@@ -29,7 +29,7 @@ import com.noblesoftware.portalmaterialdesign.R
  * @param spanStyle The [SpanStyle] to apply to specific spans within the text.
  * @param maxLines The maximum number of lines to display before truncating the text.
  *
- * @sample ExampleExpandableText
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleExpandableText
  *
  * @author VPN Android Team
  * @since 2024

@@ -48,7 +48,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalShapes
  * @param onNegative A callback when the negative button is clicked (optional).
  * @param onDismissRequest A callback when the dialog is dismissed (optional).
  *
- * @sample ExampleDefaultDialog
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultDialog
  * 
  * @author VPN Android Team
  * @since 2024

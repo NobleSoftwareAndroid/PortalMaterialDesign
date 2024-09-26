@@ -16,7 +16,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
  * @param height The vertical spacing (height) to add. Defaults to the regular spacing defined by the current theme.
  * @param width The horizontal spacing (width) to add. Defaults to the regular spacing defined by the current theme.
  *
- * @sample ExampleDefaultSpacer
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultSpacer
  *
  * @author VPN Android Team
  * @since 2024
