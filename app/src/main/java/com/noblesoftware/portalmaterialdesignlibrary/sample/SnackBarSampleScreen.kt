@@ -50,7 +50,6 @@ fun SnackBarSampleScreen(
         )
     }
     LaunchedEffect(snackbarState.value) {
-        println(snackbarState.value.toString())
         if (!snackbarState.value.message.isNullOrBlank() || snackbarState.value.messageId != null) {
             snackbarHostState.showDefaultSnackbar(
                 context = context,
