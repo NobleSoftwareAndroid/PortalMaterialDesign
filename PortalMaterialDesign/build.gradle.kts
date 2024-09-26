@@ -66,17 +66,17 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
-
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
-                from(components["release"])
-
-                groupId = "com.noblesoftware.portalmaterialdesign"
-                artifactId = "com.noblesoftware.portalmaterialdesign"
-                version = "1.0.0"
-            }
+tasks.dokkaHtml.configure {
+    dokkaSourceSets {
+        named("main") {
+            moduleName.set("Portal Material Design")
         }
+    }
+    pluginConfiguration<org.jetbrains.dokka.base.DokkaBase, org.jetbrains.dokka.base.DokkaBaseConfiguration> {
+        customAssets = listOf(file("assets/logo.png"))
+        customStyleSheets = listOf(file("assets/styles.css"))
+        footerMessage = "© 2024 VPN Android Team"
+        separateInheritedMembers = false
+        mergeImplicitExpectActualDeclarations = false
     }
 }

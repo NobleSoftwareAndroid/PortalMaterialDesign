@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
 
 /**
@@ -15,7 +16,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
  * @param height The vertical spacing (height) to add. Defaults to the regular spacing defined by the current theme.
  * @param width The horizontal spacing (width) to add. Defaults to the regular spacing defined by the current theme.
  *
- * @sample DefaultSpacer
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultSpacer
  *
  * @author VPN Android Team
  * @since 2024
@@ -30,4 +31,10 @@ fun DefaultSpacer(
             .height(height)
             .width(width)
     )
+}
+
+@Composable
+private fun ExampleDefaultSpacer() {
+    DefaultSpacer(height = 16.dp)
+    DefaultSpacer(width = 8.dp)
 }

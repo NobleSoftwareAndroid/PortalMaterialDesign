@@ -23,6 +23,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -97,7 +98,7 @@ fun GreetingPreview() {
  * @param onValueChange A lambda function to handle changes in the input value.
  * @param onFocusChange A lambda function to handle focus changes (e.g., when the input gains or loses focus).
  *
- * @sample DefaultTextInput
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultTextInput
  *
  * @author VPN Android Team
  * @since 2024
@@ -386,4 +387,17 @@ fun DefaultTextInput(
         }
 
     }
+}
+
+
+
+@Composable
+private fun ExampleDefaultTextInput(text: MutableState<String>) {
+    DefaultTextInput(
+        label = "Email",
+        placeholder = "Please input email",
+        required = true,
+        inputType = KeyboardType.Email,
+        value = text.value,
+        onValueChange = { text.value = it })
 }

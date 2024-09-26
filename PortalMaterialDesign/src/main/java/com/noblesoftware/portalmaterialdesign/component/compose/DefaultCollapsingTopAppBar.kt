@@ -38,7 +38,7 @@ import com.noblesoftware.portalmaterialdesign.R
  * @param navigator An optional NavHostController for handling navigation actions.
  * @param actions An optional composable lambda that defines additional action icons or buttons to display in the app bar.
  *
- * @sample ExampleDefaultTopAppBar
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultTopAppBar
  *
  * @author VPN Android Team
  * @since 2024

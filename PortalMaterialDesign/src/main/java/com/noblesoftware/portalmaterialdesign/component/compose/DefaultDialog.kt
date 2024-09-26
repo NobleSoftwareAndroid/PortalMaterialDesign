@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextAlign
@@ -47,7 +48,7 @@ import com.noblesoftware.portalmaterialdesign.theme.LocalShapes
  * @param onNegative A callback when the negative button is clicked (optional).
  * @param onDismissRequest A callback when the dialog is dismissed (optional).
  *
- * @sample ExampleDefaultDialog
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleDefaultDialog
  * 
  * @author VPN Android Team
  * @since 2024
@@ -237,4 +238,16 @@ value class DialogType internal constructor(@Suppress("unused") private val valu
         @Stable
         val FullScreenAlert: DialogType = DialogType(3)
     }
+}
+
+@Composable
+private fun ExampleDefaultDialog() {
+    DefaultDialog(
+        icon = painterResource(id = R.drawable.img_shield),
+        title = "title example",
+        message = "message example",
+        positiveButtonText = "oke",
+        onPositive = { /* positive callback */ },
+        onDismissRequest = {/* negative callback */ },
+    )
 }

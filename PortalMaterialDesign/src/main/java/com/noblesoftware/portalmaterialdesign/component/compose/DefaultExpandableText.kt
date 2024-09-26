@@ -1,4 +1,4 @@
-package com.noblesoftware.core.ui.component.compose
+package com.noblesoftware.portalmaterialdesign.component.compose
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.text.ClickableText
@@ -20,6 +20,20 @@ import androidx.compose.ui.text.withStyle
 import androidx.core.content.ContextCompat
 import com.noblesoftware.portalmaterialdesign.R
 
+/**
+ * A composable function that displays expandable text with optional styling.
+ *
+ * @param modifier The modifier to apply to the composable.
+ * @param text The text content to display.
+ * @param style The [TextStyle] to use for the text. Defaults to [MaterialTheme.typography.bodyMedium].
+ * @param spanStyle The [SpanStyle] to apply to specific spans within the text.
+ * @param maxLines The maximum number of lines to display before truncating the text.
+ *
+ * @sample com.noblesoftware.portalmaterialdesign.component.compose.ExampleExpandableText
+ *
+ * @author VPN Android Team
+ * @since 2024
+ */
 @Composable
 fun DefaultExpandableText(
     modifier: Modifier = Modifier,
