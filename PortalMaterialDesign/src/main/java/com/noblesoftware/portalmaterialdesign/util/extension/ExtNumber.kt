@@ -1,18 +1,10 @@
 package com.noblesoftware.portalmaterialdesign.util.extension
 
-import android.content.Context
-import android.icu.number.Notation
-import android.icu.number.NumberFormatter
-import android.icu.text.CompactDecimalFormat
 import android.icu.text.MessageFormat
 import android.icu.text.NumberFormat
 import android.os.Build
 import com.noblesoftware.portalmaterialdesign.R
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 import java.util.Locale
-import kotlin.math.ln
-import kotlin.math.pow
 
 fun Int.toWords(language: String = "en", country: String = "US"): String {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -56,7 +48,8 @@ fun Int?.orResourceStringEmpty(): Int = this ?: R.string.empty_string
 
 fun Int?.orResourceStringWhiteSpace(): Int = this ?: R.string.empty_white_space
 
-fun Int.toCurrency(): String = java.text.NumberFormat.getNumberInstance(Locale("in", "ID")).format(this)
+fun Int.toCurrency(): String =
+    java.text.NumberFormat.getNumberInstance(Locale("in", "ID")).format(this)
 
 fun Int?.ifNull(execute: () -> Int): Int {
     return this ?: execute.invoke()

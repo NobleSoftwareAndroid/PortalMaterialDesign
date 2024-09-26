@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    kotlin("plugin.serialization") version "1.4.21"
 }
 
 android {
@@ -53,6 +54,7 @@ android {
 dependencies {
 
     implementation(projects.portalMaterialDesign)
+//    implementation("com.github.NobleSoftwareAndroid:PortalMaterialDesign:0.1.0-alpha")
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -63,6 +65,8 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.kotlinx.serialization.core)
+    implementation(libs.kotlinx.serialization.json)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -1,8 +1,6 @@
 package com.noblesoftware.portalmaterialdesign.util.extension
 
-import android.content.res.Configuration
 import android.content.res.Resources
-import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier

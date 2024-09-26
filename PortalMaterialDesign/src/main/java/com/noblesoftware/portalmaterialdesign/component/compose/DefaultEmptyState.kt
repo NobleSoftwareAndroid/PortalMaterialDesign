@@ -1,7 +1,6 @@
-package com.noblesoftware.core.ui.component.compose
+package com.noblesoftware.portalmaterialdesign.component.compose
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
@@ -18,7 +17,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.style.TextAlign
 import com.noblesoftware.portalmaterialdesign.R
-import com.noblesoftware.portalmaterialdesign.component.compose.DefaultSpacer
 import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
 
 /**

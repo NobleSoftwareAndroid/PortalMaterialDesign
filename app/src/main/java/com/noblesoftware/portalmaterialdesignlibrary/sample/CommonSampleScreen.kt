@@ -13,6 +13,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -26,10 +27,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.noblesoftware.core.ui.component.compose.DefaultEmptyState
+import com.noblesoftware.portalmaterialdesign.R
+import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
+import com.noblesoftware.portalmaterialdesign.component.compose.DefaultEmptyState
 import com.noblesoftware.portalmaterialdesign.component.compose.BottomSheetType
 import com.noblesoftware.portalmaterialdesign.component.compose.ButtonSize
 import com.noblesoftware.portalmaterialdesign.component.compose.ButtonType
@@ -42,7 +46,6 @@ import com.noblesoftware.portalmaterialdesign.component.compose.DefaultProgressD
 import com.noblesoftware.portalmaterialdesign.component.compose.DefaultSpacer
 import com.noblesoftware.portalmaterialdesign.component.compose.DefaultTextInput
 import com.noblesoftware.portalmaterialdesign.component.compose.DefaultTopAppBar
-import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -59,10 +62,19 @@ fun CommonSampleScreen(
     var openBottomSheet by rememberSaveable { mutableStateOf(false) }
     var openBottomSheet2 by rememberSaveable { mutableStateOf(false) }
 
-    Scaffold {
+    Scaffold(
+        topBar = {
+            DefaultTopAppBar(
+                modifier = Modifier,
+                title = "Commons",
+                canBack = true,
+                navigator = navHostController
+            )
+        }
+    ) {
         Column(
             modifier = Modifier
-                .background(color = colorResource(id = com.noblesoftware.portalmaterialdesign.R.color.neutral_solid_color))
+                .background(color = colorResource(id = R.color.background_body))
                 .padding(paddingValues = it)
                 .verticalScroll(rememberScrollState())
                 .then(
@@ -763,7 +775,7 @@ private fun ExampleEmptyState() {
         modifier = Modifier
             .padding(end = LocalDimen.current.regular)
             .fillMaxWidth(),
-        icon = painterResource(id = com.noblesoftware.portalmaterialdesign.R.drawable.img_announcement_empty),
+        icon = painterResource(id = R.drawable.img_announcement_empty),
         title = "Coming soon",
         message = "Overview of main features will be shown here"
     )

@@ -10,6 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://jitpack.io") {
+            credentials { username = "jp_nrbbiopg6790ka4alo2qveinpj" }
+        }
     }
 }
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.noblesoftware.portalmaterialdesign.R
 import com.noblesoftware.portalmaterialdesign.model.SnackbarState
+import com.noblesoftware.portalmaterialdesign.model.SnackbarType
 import com.noblesoftware.portalmaterialdesign.theme.LocalDimen
 import com.noblesoftware.portalmaterialdesign.theme.LocalShapes
 import com.noblesoftware.portalmaterialdesign.util.extension.ifNullOrEmpty
@@ -56,25 +57,27 @@ fun DefaultSnackbar(
     val context = LocalContext.current
     val snackbarData = data.visuals.toDefaultSnackBarVisual(context, state)
     val actionLabel = snackbarData.actionLabel
-    val contentColor =
-        if (snackbarData.isSuccess) colorResource(id = R.color.success_soft_color) else colorResource(
-            id = R.color.danger_soft_color
-        )
-    val containerColor =
-        if (snackbarData.isSuccess) colorResource(id = R.color.success_soft_bg) else colorResource(
-            id = R.color.danger_soft_bg
-        )
+    var contentColor = snackbarData.type?.contentColor ?: R.color.neutral_soft_color
+    var containerColor = snackbarData.type?.containerColor ?: R.color.neutral_soft_bg
+
+    if (snackbarData.type == null) {
+        contentColor =
+            if (snackbarData.isSuccess) R.color.success_soft_color else R.color.danger_soft_color
+        containerColor =
+            if (snackbarData.isSuccess) R.color.success_soft_bg else R.color.danger_soft_bg
+    }
+
     val actionComposable: (@Composable () -> Unit)? = if (actionLabel != null) {
         @Composable {
             TextButton(
-                colors = ButtonDefaults.textButtonColors(contentColor = contentColor),
+                colors = ButtonDefaults.textButtonColors(contentColor = colorResource(id = contentColor)),
                 onClick = { data.performAction() },
                 content = {
                     Text(
                         text = actionLabel,
                         style = MaterialTheme.typography.bodyMedium.copy(
                             fontWeight = FontWeight.SemiBold,
-                            color = contentColor
+                            color = colorResource(id = contentColor)
                         )
                     )
                 }
@@ -92,7 +95,7 @@ fun DefaultSnackbar(
                         Icon(
                             Icons.Filled.Close,
                             contentDescription = "Close",
-                            tint = contentColor
+                            tint = colorResource(id = contentColor)
                         )
                     }
                 )
@@ -105,11 +108,11 @@ fun DefaultSnackbar(
             modifier = Modifier
                 .clip(LocalShapes.small)
                 .shadow(2.dp),
-            contentColor = contentColor,
-            containerColor = containerColor,
-            actionContentColor = contentColor,
+            contentColor = colorResource(id = contentColor),
+            containerColor = colorResource(id = containerColor),
+            actionContentColor = colorResource(id = contentColor),
             action = actionComposable,
-            dismissActionContentColor = contentColor,
+            dismissActionContentColor = colorResource(id = contentColor),
             dismissAction = dismissActionComposable,
             shape = LocalShapes.small,
         ) {
@@ -118,7 +121,7 @@ fun DefaultSnackbar(
                     text = snackbarData.message,
                     style = MaterialTheme.typography.bodyMedium.copy(
                         fontWeight = FontWeight.Medium,
-                        color = contentColor
+                        color = colorResource(id = contentColor)
                     )
                 )
             }
@@ -129,6 +132,7 @@ fun DefaultSnackbar(
 data class DefaultSnackbarVisuals(
     override val message: String,
     val isSuccess: Boolean,
+    val type: SnackbarType? = null,
     override val duration: SnackbarDuration = SnackbarDuration.Short,
     override val actionLabel: String? = null,
     override val withDismissAction: Boolean = false
@@ -138,6 +142,7 @@ fun SnackbarVisuals.toDefaultSnackBarVisual(context: Context, state: SnackbarSta
     DefaultSnackbarVisuals(
         message = state.message.ifNullOrEmpty { context.getString(state.messageId.orResourceStringEmpty()) },
         isSuccess = state.isSuccess,
+        type = state.type,
         duration = this.duration,
         actionLabel = this.actionLabel,
         withDismissAction = this.withDismissAction,
@@ -154,6 +159,7 @@ suspend fun SnackbarHostState.showDefaultSnackbar(
         DefaultSnackbarVisuals(
             message = snackbar.message.ifNullOrEmpty { context.getString(snackbar.messageId.orResourceStringEmpty()) },
             isSuccess = snackbar.isSuccess,
+            type = snackbar.type,
             actionLabel = actionLabel,
             withDismissAction = withDismissAction,
             duration = duration
