@@ -593,6 +593,15 @@ fun CommonSampleScreen(
                     value = text.value,
                     onValueChange = { text.value = it })
                 DefaultSpacer(LocalDimen.current.regular)
+                DefaultTextInput(
+                    label = "Address",
+                    placeholder = "Please input address",
+                    required = true,
+                    singleLine = false,
+                    value = text.value,
+                    minLines = 4,
+                    onValueChange = { text.value = it })
+                DefaultSpacer(LocalDimen.current.regular)
                 Text(text = "input helper")
                 DefaultSpacer()
 
@@ -614,6 +623,16 @@ fun CommonSampleScreen(
                     helperText = "Password must be at least 8 characters",
                     onValueChange = { text.value = it })
                 DefaultSpacer(LocalDimen.current.regular)
+                DefaultTextInput(
+                    label = "Address",
+                    placeholder = "Please input address",
+                    required = true,
+                    singleLine = false,
+                    value = text.value,
+                    minLines = 4,
+                    helperText = "Helper Text",
+                    onValueChange = { text.value = it })
+                DefaultSpacer(LocalDimen.current.regular)
                 Text(text = "input  error")
                 DefaultSpacer()
 
@@ -633,6 +652,16 @@ fun CommonSampleScreen(
                     inputType = KeyboardType.Password,
                     value = text.value,
                     errorText = "Invalid email or password",
+                    onValueChange = { text.value = it })
+                DefaultSpacer(LocalDimen.current.regular)
+                DefaultTextInput(
+                    label = "Address",
+                    placeholder = "Please input address",
+                    required = true,
+                    singleLine = false,
+                    value = text.value,
+                    minLines = 4,
+                    errorText = "Invalid address",
                     onValueChange = { text.value = it })
 
                 DefaultSpacer(height = LocalDimen.current.extraLarge)
